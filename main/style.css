@@ -1,0 +1,683 @@
+html {
+	scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+  line-height: 1.4;
+  color: #8A0000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #b968c5, skyblue);
+}
+
+.header {
+  width: 100%;
+  max-height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__logo {
+  width: 200px;
+}
+
+.header__score {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.main__video { 
+  position: fixed; 
+  top: 0; 
+  left: 0;    
+  background-size: cover; 
+  overflow: hidden;  
+  z-index: -1; 
+  width: 100%; 
+  height: 100%;
+}
+
+.main__video__birds {  
+  position: absolute;  
+  top: -290px;  
+  left: 0; 
+  width: auto;  
+  height: auto;  
+  min-width: 100%;   
+  min-height: 170%;   
+}
+
+.main {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.main__birds-class {
+  width: 100%;
+}
+
+.main__birds-class__nav-list {
+  width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 2rem;
+  background-color: #639C2B;
+  overflow: hidden; 
+}
+
+.main__birds-class__nav-list__item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	flex-wrap: wrap;
+  flex-grow: 1;
+  padding: 0.5rem;
+  color: #380A0A;
+  font-size: 1.5rem;
+}
+
+.item__check {
+  background: #80C837;
+}
+
+.main__question {
+  margin-top: 1rem;
+  
+  display: flex;
+  justify-content: space-around;
+  background: #545454;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.main__question__img {
+  margin: 0.5rem 0 0.5rem 0.5rem;
+  height: 126px;
+  width: 176px;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.main__question__info {
+  height: 126px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main__question__info__name {
+  font-size: 2rem;
+  font-weight: 700;
+  height: 50%;
+  width: 100%;
+  color: #fff;
+}
+
+.main__question__info__song {
+  height: 50%;
+  width: 100%;
+}
+
+.main__answer {
+  margin-top: 1rem;
+  min-height: 24rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1rem;
+}
+
+.main__answer__options {
+  width: 48%;
+  height: 24rem;
+  background: #545454;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; 
+}
+
+.main__answer__options__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(100%/6);
+  outline: 1px solid #9C9C9C;
+  transition: background 0.6s;
+}
+
+.main__answer__options__item:hover {
+  background: #9C9C9C;
+  cursor: pointer;
+}
+
+.main__answer__options__item__circle {
+  border-radius: 50%;
+  background: #fff;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 2rem;
+}
+
+.circle__false {
+  background:  #ff0000;
+}
+
+.circle__true {
+  background: #00D678;
+}
+
+.main__answer__options__item__bird-name {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.main__answer__about-bird {
+  width: 48%;
+  height: 100%;
+  background: #545454;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__answer__about-bird__select-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 1rem;
+}
+
+.main__answer__about-bird__selected {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.main__answer__about-bird__selected__img {
+  height: 126px;
+  width: 176px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.main__answer__about-bird__selected__img__bird {
+  height: 126px;
+  width: 176px;
+}
+
+.main__answer__about-bird__selected__difference {
+  margin: 1rem 1rem 0 0;
+  min-width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+}
+
+.main__answer__about-bird__selected__difference__name {
+  height: calc(100%/5*1);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.main__answer__about-bird__selected__latin {
+  height: calc(100%/5*1);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.main__answer__about-bird__selected__song {
+  height: calc(100%/5*3);
+}
+
+.main__answer__about-bird__text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 1rem;
+  text-align: justify;
+}
+
+.main__button-next {
+  cursor: pointer;
+  margin: 1rem 0;
+  border: none;
+  background: #8A0000;
+  color: #DEDEDE;
+  font-size: 1.2rem;
+  font-family: Roboto, sans-serif;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  transition: background-color 0.6s;
+}
+
+.button-next__win {
+  background-color: #639C2B;
+}
+
+.main__info {
+  max-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.main__info__text {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.main__info__button {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  border: none;
+  background: #8A0000;
+  color: #DEDEDE;
+  font-size: 1.2rem;
+  font-family: Roboto, sans-serif;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  transition: background-color 0.6s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #1F0000;
+}
+
+.footer {
+  width: 100%;
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer__info__autour {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.autour {
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.footer__info__school {
+  width: 100px;
+}
+
+.main__gallery {
+  width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
+.main__gallery__item {
+  margin: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	flex-wrap: wrap;
+  flex-grow: 1;
+  padding: 0.5rem;
+  color: #380A0A;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  text-align: justify;
+}
+
+.main__gallery__item__name {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.main__gallery__item__name__img {
+  border-radius: 1rem;
+}
+
+.main__gallery__item__name__bird {
+  width: calc(100% - 176px - 2rem);
+}
+
+.main__gallery__item__name__bird__song {
+  width: 100%;
+  height: calc(100%/3);
+}
+
+.main__result {
+  height: calc(85vh);
+  background-color: #9C9C9C;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main__result__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #DEDEDE;
+}
+
+.main__result__text__сongratulation {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.main__result__text__description {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.button__new-game__result {
+  width: 90%;
+}
+
+.audio-player {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+
+.audio-player__controls {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #80C837;
+}
+
+.play {
+  cursor: pointer;
+  position: relative;
+  left: 0.4rem;
+  height: 0;
+  width: 0;
+  border: 0.5rem solid #0000;
+  border-left: 1rem solid #80C837;
+}
+
+.play:hover {
+  transform: scale(1.2);
+}
+
+.pause {
+  height: 80%;
+  width: 80%;
+  cursor: pointer;
+  position: relative;
+}
+
+.pause:hover {
+  transform: scale(1.2);
+}
+
+.pause::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 20%;
+  background: #80C837;
+  height: 100%;
+  width: 3px;
+}
+
+.pause::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  background: #80C837;
+  height: 100%;
+  width: 3px;
+}
+
+.audio-player__interaction {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.audio-player__interaction__line {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #9C9C9C;
+  position: relative;
+  cursor: pointer;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.audio-player__interaction__line__progress {
+  background-color: #80C837;
+  width: 0%;
+  height: 100%;
+  transition: .3s;
+}
+
+.audio-player__interaction__time {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.audio-player__interaction__time__start {
+  font-size: 1rem;
+}
+
+.audio-player__interaction__time__finish {
+  font-size: 1rem;
+}
+
+.audio-player__volume {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.audio-player__volume__button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.volume {
+  width: 100%;
+  height: 100%;
+  background: url(../assets/icons/volume.png) no-repeat center;
+  background-size: 100%;
+}
+
+.mute {
+  width: 100%;
+  height: 100%;
+  background: url(../assets/icons/mute.png) no-repeat center;
+  background-size: 100%;
+}
+
+.audio-player__volume__button:hover ~ .audio-player__volume__level {
+  top: 25%;
+  left: -400%;
+  width: 390%;
+}
+
+.volume {
+  transform: scale(0.7);
+}
+
+.audio-player__volume__level {
+  position: absolute;
+  left: -3px; 
+  top: 25%;
+  z-index: -1;
+  width: 0;
+  height: 50%;
+  background: #9C9C9C;
+  transition: .25s;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.audio-player__volume__level:hover {
+  top: 25%;
+  left: -400%;
+  width: 390%;
+}
+
+.audio-player__volume__level__percent {
+  background: #80C837;
+  height: 100%;
+  width: 75%;
+}
+
+.language {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.language__button-ru {
+  border-radius: 0;
+}
+
+.language__button-en {
+  border-radius: 0;
+}
+
+.language__button__checked {
+  background-color: #000;
+}
+
+@media (max-width: 1200px) and (min-width: 1000px) {
+  body, html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 800px) {
+  body, html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 600px) {
+  body, html {
+    font-size: 10px;
+  }
+
+  .main__answer {
+    flex-direction: column;
+  }
+
+  .main__answer__options {
+    width: 100%;
+  }
+
+  .main__answer__about-bird {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body, html {
+    font-size: 10px;
+  }
+
+  .main__question {
+    flex-direction: column;
+  }
+
+  .main__question__info {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .main__answer {
+    flex-direction: column;
+  }
+
+  .main__answer__options {
+    width: 100%;
+  }
+
+  .main__answer__about-bird {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .main__answer__about-bird__selected {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main__gallery__item__name {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .main__gallery__item__name__bird {
+    margin: 1rem;
+    width: auto;
+  }
+}
+
+.hidden {
+  display: none;
+}
